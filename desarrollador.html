@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrolladores</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Georgia, serif;
+            background:
+                radial-gradient(circle at 50% 20%, #263746 0%, transparent 45%),
+                linear-gradient(135deg, #080b10, #151c25, #050609);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* FONDO ANIMADO */
+
+        .fondo {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .luz {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            filter: blur(110px);
+            opacity: 0.18;
+            animation: movimiento 8s infinite alternate;
+        }
+
+        .luz1 {
+            background: #00c8ff;
+            top: 10%;
+            left: -100px;
+        }
+
+        .luz2 {
+            background: #657cff;
+            bottom: 0;
+            right: -100px;
+            animation-delay: 2s;
+        }
+
+        @keyframes movimiento {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(100px, 70px);
+            }
+        }
+
+        /* CONTENIDO */
+
+        .contenedor {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px 100px;
+        }
+
+        .titulo {
+            font-size: 38px;
+            letter-spacing: 8px;
+            text-align: center;
+            color: #e9faff;
+            text-shadow: 0 0 20px #00bfff;
+            margin-bottom: 65px;
+        }
+
+        /* TARJETAS */
+
+        .tarjetas {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .tarjeta {
+            width: 300px;
+            min-height: 260px;
+            padding: 35px 25px;
+
+            background: linear-gradient(
+                145deg,
+                rgba(40, 55, 68, 0.8),
+                rgba(10, 15, 22, 0.95)
+            );
+
+            border: 1px solid rgba(0, 195, 255, 0.35);
+            border-radius: 15px;
+
+            text-align: center;
+
+            box-shadow:
+                0 0 25px rgba(0, 180, 255, 0.08),
+                inset 0 0 20px rgba(0, 180, 255, 0.04);
+
+            transition: 0.4s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-10px);
+            border-color: #00c8ff;
+            box-shadow: 0 0 30px rgba(0, 195, 255, 0.25);
+        }
+
+        .numero {
+            font-size: 14px;
+            color: #00c8ff;
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+        }
+
+        .nombre {
+            font-size: 29px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .linea {
+            width: 55px;
+            height: 2px;
+            background: #00c8ff;
+            margin: 0 auto 22px;
+            box-shadow: 0 0 10px #00c8ff;
+        }
+
+        .descripcion {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #aebdca;
+        }
+
+        /* BOTÓN VOLVER */
+
+        #volver {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 10;
+
+            padding: 13px 25px;
+
+            background: rgba(20, 35, 48, 0.9);
+            border: 1px solid #00bfff;
+            border-radius: 8px;
+
+            color: white;
+            font-size: 13px;
+            letter-spacing: 2px;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #volver:hover {
+            background: #007da5;
+            box-shadow: 0 0 20px #00bfff;
+            transform: translateY(-3px);
+        }
+
+        /* MÓVILES */
+
+        @media (max-width: 600px) {
+            .titulo {
+                font-size: 27px;
+                letter-spacing: 5px;
+            }
+
+            .tarjeta {
+                width: min(100%, 320px);
+            }
+
+            #volver {
+                right: 12px;
+                bottom: 12px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="fondo">
+        <div class="luz luz1"></div>
+        <div class="luz luz2"></div>
+    </div>
+
+    <main class="contenedor">
+
+        <h1 class="titulo">DESARROLLADORES</h1>
+
+        <section class="tarjetas">
+
+            <div class="tarjeta">
+
+                <div class="numero">01 / DISEÑO</div>
+
+                <h2 class="nombre">NEREA</h2>
+
+                <div class="linea"></div>
+
+                <p class="descripcion">
+                    Responsable de la selección,
+                    organización y presentación
+                    de las fotografías del proyecto.
+                </p>
+
+            </div>
+
+            <div class="tarjeta">
+
+                <div class="numero">02 / DESARROLLO</div>
+
+                <h2 class="nombre">JANKO</h2>
+
+                <div class="linea"></div>
+
+                <p class="descripcion">
+                    Responsable del desarrollo,
+                    programación y diseño del
+                    resto del proyecto.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- BOTÓN VOLVER -->
+
+    <button id="volver" onclick="window.location.href='./carta.html'">
+        VOLVER
+    </button>
+
+</body>
+</html>

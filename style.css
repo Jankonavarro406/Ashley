@@ -1,0 +1,211 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    width: 100%;
+}
+
+body {
+    background: #02060d;
+    color: #eafaff;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.fondo {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 30px 18px;
+    background: radial-gradient(
+        ellipse at center,
+        #0a1c2d 0%,
+        #030810 55%,
+        #000 100%
+    );
+}
+
+.circulo {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 220, 255, 0.13);
+    pointer-events: none;
+}
+
+.circulo1 {
+    width: 520px;
+    height: 520px;
+    animation: girar 28s linear infinite;
+}
+
+.circulo2 {
+    width: 700px;
+    height: 700px;
+    border-style: dashed;
+    animation: girar 45s linear infinite reverse;
+}
+
+@keyframes girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.contenedor {
+    position: relative;
+    z-index: 1;
+    width: min(900px, 100%);
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.etiqueta {
+    color: #00d9ff;
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 22px;
+}
+
+h1 {
+    font-size: clamp(25px, 4vw, 43px);
+    letter-spacing: 4px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.linea {
+    width: 100px;
+    height: 2px;
+    background: #00d9ff;
+    margin: 0 auto 38px;
+    box-shadow: 0 0 14px #00d9ff;
+}
+
+.contador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 2.4vw, 25px);
+}
+
+.bloque {
+    min-width: 75px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.numero {
+    font-size: clamp(32px, 6vw, 65px);
+    font-weight: 300;
+    color: #f5fcff;
+    text-shadow: 0 0 18px rgba(0, 217, 255, 0.28);
+    font-variant-numeric: tabular-nums;
+}
+
+.bloque span {
+    color: #66dff2;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.separador {
+    font-size: clamp(25px, 4vw, 45px);
+    color: #00d9ff;
+    margin-top: -15px;
+}
+
+.estado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 35px;
+    color: #8ba7b6;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.punto {
+    width: 7px;
+    height: 7px;
+    background: #00e5ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00e5ff;
+    animation: pulso 1.5s infinite;
+}
+
+@keyframes pulso {
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.boton-regalo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 35px;
+    padding: 15px 28px;
+    color: #00eaff;
+    background: rgba(0, 234, 255, 0.08);
+    border: 1px solid #00eaff;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+  .boton-regalo:hover { 
+    color: #000;
+    background: #00eaff;
+    box-shadow: 0 0 25px rgba(0, 234, 255, 0.5);
+    transform: translateY(-3px);
+} 
+
+.boton-regalo span {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.boton-regalo:hover span {
+    transform: translateX(5px);
+} 
+
+@media (max-width: 520px) {
+    .contador {
+        gap: 5px;
+    }
+
+    .bloque {
+        min-width: 55px;
+    }
+
+    .bloque span {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .etiqueta {
+        letter-spacing: 2px;
+    }
+
+    h1 {
+        letter-spacing: 2px;
+    }
+
+    .separador {
+        margin-top: -12px;
+    }
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi carta</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #bdbdbd;
+            color: #252525;
+            font-family: Georgia, serif;
+            padding-bottom: 90px;
+        }
+
+        /* DECORACIÓN SUPERIOR */
+
+        .decoracion {
+            height: 150px;
+            width: 100%;
+            background: linear-gradient(
+                135deg,
+                #777,
+                #dedede,
+                #888
+            );
+
+            border-bottom: 3px solid #999;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .decoracion::before,
+        .decoracion::after {
+            content: "✦  ✧  ❖  ✧  ✦";
+
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            font-size: 25px;
+            letter-spacing: 12px;
+            white-space: nowrap;
+        }
+
+        .decoracion::before {
+            top: 20px;
+            color: #eee;
+        }
+
+        .decoracion::after {
+            bottom: 20px;
+            color: #555;
+        }
+
+        .titulo {
+            font-size: 30px;
+            letter-spacing: 5px;
+            text-align: center;
+            color: #222;
+            z-index: 1;
+        }
+
+        /* CARTA CENTRADA */
+
+        .contenido {
+            width: min(850px, 90%);
+            min-height: 350px;
+
+            margin: 45px auto;
+            padding: 40px;
+
+            background: rgba(245, 245, 245, 0.75);
+            border: 1px solid #aaa;
+            border-radius: 8px;
+
+            box-shadow: 0 8px 25px #00000020;
+
+            text-align: center;
+            line-height: 1.9;
+            font-size: 19px;
+        }
+
+        .contenido h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        /* BOTONES INFERIORES */
+
+        .botones {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+
+            display: flex;
+            gap: 10px;
+        }
+
+        .botones button {
+            padding: 13px 22px;
+
+            background: #333;
+            color: white;
+
+            border: 1px solid #777;
+            border-radius: 8px;
+
+            font-size: 14px;
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .botones button:hover {
+            background: #555;
+            transform: translateY(-3px);
+        }
+
+        /* ADAPTACIÓN A MÓVILES */
+
+        @media (max-width: 600px) {
+            .decoracion {
+                height: 120px;
+            }
+
+            .titulo {
+                font-size: 22px;
+                letter-spacing: 3px;
+            }
+
+            .contenido {
+                padding: 25px 18px;
+                font-size: 17px;
+            }
+
+            .botones {
+                right: 12px;
+                bottom: 12px;
+                gap: 7px;
+            }
+
+            .botones button {
+                font-size: 12px;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="decoracion">
+        <h1 class="titulo">Ashley Nicole Cardozo Baquero</h1>
+    </header>
+
+    <main class="contenido">
+        <h2>hola :D</h2>
+
+        <p>
+            Hola Ashley. Sé que estás leyendo esto el día de tu cumpleaños
+             y quería aprovechar para hacerte un detalle único y desearte
+              un muy feliz cumpleaños quiero que nunca olvides lo increíble que eres,
+               fuiste y sigues siendo una persona que aprecio, aunque ya no hablemos 
+               todos los días como antes. Eres una persona divertida, graciosa y alguien
+                que me ha enseñado muchas cosas. Una persona que ha estado ahí tanto en los
+                 buenos como en los malos momentos. También esos días q siempre te llevaba la 
+                 contra y tú terminabas enojada jajaj pero bueno. De verdad espero que hoy tengas un buen día
+                , que disfrutes mucho y no olvides la increíble persona q eres. Feliz cumpleaños Ashley cuídate 
+                mucho y recuerda que eres una persona muy especial, ya no sé qué más decirte jsjsj, así que también 
+                quería aprovechar para disculparme por no haberme despedido eee Y de paso feliz Navida 
+                 </p>  
+                 <p>                           </p>     
+                 <p> Bno mujel Espero que te vaya muy bien en todo… cuídate
+
+        </p>
+    </main>
+
+    <!-- BOTONES -->
+
+    <div class="botones">
+
+        <button id="desarrollador">
+            DESARROLLADOR
+        </button>
+
+        <button id="volver">
+            VOLVER
+        </button>
+
+    </div>
+
+    <script>
+        document.getElementById("volver").addEventListener("click", () => {
+            window.location.href = "agujero.html";
+        });
+
+        document.getElementById("desarrollador").addEventListener("click", () => {
+            window.location.href = "desarrollador.html";
+        });
+    </script>
+
+</body>
+</html>
